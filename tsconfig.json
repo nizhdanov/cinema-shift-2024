@@ -17,7 +17,11 @@
         "name": "next"
       }
     ],
+    "baseUrl": "./",
     "paths": {
+      "@/utils": ["lib"],
+      "@/ui": ["components/ui"],
+      "@/icons": ["components/ui/icons"],
       "@/*": ["./*"]
     }
   },
