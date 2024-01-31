@@ -20,6 +20,8 @@
     "baseUrl": "./",
     "paths": {
       "@/utils": ["lib"],
+      "@/types": ["lib/types"],
+      "@/requests": ["lib/api/requests"],
       "@/ui": ["components/ui"],
       "@/icons": ["components/ui/icons"],
       "@/*": ["./*"]

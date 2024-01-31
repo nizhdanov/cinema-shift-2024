@@ -14,7 +14,7 @@ const links = [
 const MobileBottomNavigation = () => {
   const pathname = usePathname();
   return (
-    <nav className='absolute bottom-0 left-0 right-0 flex flex-row items-center justify-around border-t border-neutral-200 pb-[9px] pt-[10px] '>
+    <nav className='sticky bottom-0 left-0 right-0 z-50 flex flex-row items-center justify-around border-t border-neutral-200 bg-white pb-[9px] pt-[10px] sm:hidden '>
       {links.map(({ title, href, icon }) => (
         <Link key={title} href={href} className='flex flex-col items-center justify-center'>
           {React.createElement(icon.type, {

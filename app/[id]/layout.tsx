@@ -1,7 +1,5 @@
 import { BtnAndTitleNav } from '@/components/BtnAndTitleNav';
-import { DesktopHeader } from '@/components/DesktopHeader';
-import { MobileBottomNavigation } from '@/components/MobileBottomNavigation';
-import { ArrowBack } from '@/icons';
+import { Cross } from '@/icons';
 import { cookies } from 'next/headers';
 
 interface LayoutProps {
@@ -14,14 +12,13 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       {viewport === 'mobile' ? (
-        <BtnAndTitleNav title={'Билеты'}>
-          <ArrowBack />
+        <BtnAndTitleNav>
+          <Cross />
         </BtnAndTitleNav>
       ) : (
-        <DesktopHeader />
+        <></>
       )}
       <div className='px-4 sm:px-0'>{children}</div>
-      {viewport === 'mobile' && <MobileBottomNavigation />}
     </>
   );
 };
