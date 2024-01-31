@@ -16,5 +16,5 @@ export interface Film {
   genres: string[];
   userRatings: UserRatings;
   img: string;
-  country?: Country;
+  country: Country;
 }

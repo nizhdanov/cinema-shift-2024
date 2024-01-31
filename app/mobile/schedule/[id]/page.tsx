@@ -1,6 +1,6 @@
 import { getByFilmIdSchedule } from '@/requests';
 import { ScheduleResponse } from '@/types';
-import { Button, Tabs, TabsContent, TabsList, TabsTrigger } from '@/ui';
+import { Button, ScrollArea, Tabs, TabsContent, TabsList, TabsTrigger } from '@/ui';
 import React from 'react';
 
 const SchedulePage = async ({ params: { id } }: { params: { id: string } }) => {
@@ -20,7 +20,7 @@ const SchedulePage = async ({ params: { id } }: { params: { id: string } }) => {
 
   return (
     <main>
-      <Tabs defaultValue={schedules[0].date} className='w-full'>
+      <Tabs defaultValue={schedules[0].date} className='w-full px-4'>
         <TabsList className='grid w-full grid-cols-7'>
           {schedules.map((schedule) => (
             <TabsTrigger key={schedule.date} value={schedule.date} className=''>

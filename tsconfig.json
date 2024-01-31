@@ -19,10 +19,11 @@
     ],
     "baseUrl": "./",
     "paths": {
+      "@/ui": ["components/ui"],
       "@/utils": ["lib"],
       "@/types": ["lib/types"],
+      "@/api": ["lib/api"],
       "@/requests": ["lib/api/requests"],
-      "@/ui": ["components/ui"],
       "@/icons": ["components/ui/icons"],
       "@/*": ["./*"]
     }

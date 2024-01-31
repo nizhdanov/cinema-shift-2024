@@ -1,4 +1,4 @@
-import { Schedule } from '.';
+import { Schedule } from './schedule';
 
 export interface ScheduleResponse {
   success: boolean;

@@ -1,9 +1,7 @@
 import '../styles/globals.css';
+import { inter } from '@/ui';
 import { cn } from '@/utils';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-
-const inter = Inter({ subsets: ['latin', 'cyrillic'] });
 
 export const metadata: Metadata = {
   title: 'Cinema Shift 2024',

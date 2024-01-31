@@ -1,9 +1,11 @@
 import { NextRequest, NextResponse, userAgent } from 'next/server';
 
 export function middleware(request: NextRequest) {
-  const { device } = userAgent(request);
-  const viewport = device.type === 'mobile' ? 'mobile' : 'desktop';
-  const response = NextResponse.next();
-  response.cookies.set('viewport', viewport);
-  return response;
+  // const { device } = userAgent(request);
+  // if (device.type === 'mobile') {
+  //   return NextResponse.redirect('/mobile');
+  // }
+  // if (device.type !== 'mobile') {
+  //   return NextResponse.redirect('/');
+  // }
 }

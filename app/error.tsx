@@ -10,21 +10,13 @@ export default function Error({
   reset: () => void;
 }) {
   useEffect(() => {
-    // Log the error to an error reporting service
     console.error(error);
   }, [error]);
 
   return (
-    <div>
-      <h2>Something went wrong!</h2>
-      <button
-        onClick={
-          // Attempt to recover by trying to re-render the segment
-          () => reset()
-        }
-      >
-        Try again
-      </button>
-    </div>
+    <main className=''>
+      <h2 className='text-2xl font-bold leading-loose text-gray-900'>Что-то пошло не так!</h2>
+      <button onClick={() => reset()}>Попробовать снова</button>
+    </main>
   );
 }
