@@ -1,5 +1,5 @@
 import { buttonVariants } from './ui';
-import { baseUrl } from '@/api';
+import { api } from '@/requests';
 import { Film } from '@/types';
 import { roboto } from '@/ui';
 import { cn } from '@/utils';
@@ -20,12 +20,12 @@ const FilmCard: React.FC<FilmCardProps> = ({ href, film, children, isMore }) => 
           priority={film.id === '1' ? true : false}
           fill
           alt='Постер'
-          src={`${baseUrl}${film.img}`}
+          src={`${api.baseUrl}${film.img}`}
           className='rounded-lg object-cover'
         />
-        <circle className='absolute left-0 top-0 m-2 flex h-12 w-12 items-center justify-center rounded-full border border-white bg-slate-50 font-bold text-slate-600'>
+        <div className='absolute left-0 top-0 m-2 flex h-12 w-12 items-center justify-center rounded-full border border-white bg-slate-50 font-bold text-slate-600'>
           {film.ageRating}
-        </circle>
+        </div>
 
         <div className='absolute bottom-0 right-0 flex flex-col gap-1 rounded-tl-lg bg-neutral-100 px-4 py-2'>
           <p
@@ -46,23 +46,40 @@ const FilmCard: React.FC<FilmCardProps> = ({ href, film, children, isMore }) => 
       </div>
 
       <div className='flex flex-col gap-1'>
-        <p className='text-sm font-normal leading-tight  text-gray-500'>
-          Imdb - {film.userRatings.imdb}
+        <p className='text-sm font-normal leading-tight  text-gray-500 '>
+          IMDb -{' '}
+          <span
+            className={
+              Number(film.userRatings.imdb) > 7
+                ? 'text-[#3bb33b]'
+                : Number(film.userRatings.imdb) < 3
+                  ? 'text-[#ff0000]'
+                  : 'text-gray-500'
+            }
+          >
+            {film.userRatings.imdb}
+          </span>
         </p>
-        <p className='text-sm font-normal leading-tight  text-gray-500'>
-          Kinopoisk - {film.userRatings.kinopoisk}
+        <p className='text-sm font-normal leading-tight  text-gray-500 '>
+          Кинопоиск -{' '}
+          <span
+            className={
+              Number(film.userRatings.kinopoisk) > 7
+                ? 'text-[#3bb33b]'
+                : Number(film.userRatings.kinopoisk) < 4
+                  ? 'text-[#ff0000]'
+                  : 'text-gray-500'
+            }
+          >
+            {film.userRatings.kinopoisk}
+          </span>
         </p>
       </div>
 
       {isMore && (
         <>
           <p className='text-base font-normal leading-normal text-gray-700'>{film.description}</p>
-          <p>
-            Режиссеры:{' '}
-            {film.directors.map((director) => (
-              <>{director.fullName}</>
-            ))}
-          </p>
+          <p>Режиссер: {film.directors[0].fullName}</p>
         </>
       )}
 

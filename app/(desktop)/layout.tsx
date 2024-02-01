@@ -1,4 +1,4 @@
-import { MobileBottomNavigation } from '@/components/MobileBottomNavigation';
+import { DesktopHeader } from '@/components';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -7,8 +7,8 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   return (
     <>
+      <DesktopHeader />
       {children}
-      <MobileBottomNavigation />
     </>
   );
 };

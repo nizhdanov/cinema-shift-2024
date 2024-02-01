@@ -1,6 +1,3 @@
-import { baseUrl } from '../baseUrl';
+import { api } from './instance';
 
-export const getToday = async () => {
-  const response = await fetch(`${baseUrl}/cinema/today`, { next: { revalidate: 3600 } });
-  return response.json();
-};
+export const getToday = () => api.fetch(`/cinema/today`, {}, true);

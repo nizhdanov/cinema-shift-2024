@@ -12,3 +12,5 @@ export * from './schedule-seance';
 export * from './ticket';
 export * from './hall';
 export * from './schedule-response';
+export * from './film-hall-cell';
+export * from './film-hall-cell-type';

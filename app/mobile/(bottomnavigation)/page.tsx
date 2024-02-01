@@ -16,13 +16,13 @@ const Afisha = async () => {
       <MobileHeader title={'Афиша'}>
         <ArrowBackIcon />
       </MobileHeader>
-      <main className='flex flex-col gap-4 py-4 sm:pt-12'>
+      <main className='flex flex-col gap-4 px-4  '>
         <h2 className='hidden pl-8 text-2xl font-bold leading-loose text-gray-900 sm:block'>
           Афиша
         </h2>
         <div className='flex w-full flex-col items-center justify-center gap-6 sm:grid sm:grid-cols-3 sm:gap-8'>
           {afisha.films.map((film) => (
-            <FilmCard key={film.id} href={`/mobile/${film.id}`} film={film}>
+            <FilmCard key={film.id} href={`/mobile/film/${film.id}`} film={film}>
               Подробнее
             </FilmCard>
           ))}

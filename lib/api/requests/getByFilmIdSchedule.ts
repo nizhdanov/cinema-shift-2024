@@ -1,8 +1,3 @@
-import { baseUrl } from '../baseUrl';
+import { api } from './instance';
 
-export const getByFilmIdSchedule = async (id: string) => {
-  const response = await fetch(`${baseUrl}/cinema/film/${id}/schedule`, {
-    next: { revalidate: 3600 }
-  });
-  return response.json();
-};
+export const getByFilmIdSchedule = (id: string) => api.fetch(`/cinema/film/${id}/schedule`);
