@@ -6,3 +6,4 @@ export * from './LogoIcon';
 export * from './FullLogoIcon';
 export * from './CrossIcon';
 export * from './ExitIcon';
+export * from './ChevronDownIcon';

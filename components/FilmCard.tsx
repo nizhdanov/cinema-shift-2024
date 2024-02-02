@@ -83,7 +83,7 @@ const FilmCard: React.FC<FilmCardProps> = ({ href, film, children, isMore }) => 
         </>
       )}
 
-      <Link className={buttonVariants({ size: 'full' })} href={href}>
+      <Link className={cn(buttonVariants({ size: 'full' }), ' ')} href={href}>
         {children}
       </Link>
     </div>

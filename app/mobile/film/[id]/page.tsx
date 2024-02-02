@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
   };
 }
 
-const Movie = async ({ params: { id } }: { params: { id: string } }) => {
+const FilmDescription = async ({ params: { id } }: { params: { id: string } }) => {
   const { film }: FilmResponse = await getFilmById(id);
   const { schedules }: ScheduleResponse = await getByFilmIdSchedule(id);
 
@@ -26,7 +26,7 @@ const Movie = async ({ params: { id } }: { params: { id: string } }) => {
       </MobileHeader>
       <div className='px-4'>
         <FilmCard
-          href={`/mobile/film/${id}/schedule?date=${schedules[0].date}`}
+          href={`/mobile/film/${id}/schedule/date/${schedules[0].date}`}
           film={film}
           isMore={true}
         >
@@ -37,4 +37,4 @@ const Movie = async ({ params: { id } }: { params: { id: string } }) => {
   );
 };
 
-export default Movie;
+export default FilmDescription;
