@@ -21,10 +21,13 @@
     "paths": {
       "@/ui": ["components/ui"],
       "@/utils": ["lib"],
+      "@/hooks": ["lib/hooks"],
       "@/types": ["lib/types"],
       "@/api": ["lib/api"],
       "@/requests": ["lib/api/requests"],
+      "@/auth": ["lib/api/auth"],
       "@/icons": ["components/ui/icons"],
+      "@auth": ["./auth.ts"],
       "@/*": ["./*"]
     }
   },

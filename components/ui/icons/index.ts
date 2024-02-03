@@ -7,3 +7,5 @@ export * from './FullLogoIcon';
 export * from './CrossIcon';
 export * from './ExitIcon';
 export * from './ChevronDownIcon';
+export * from './ArrowSmallRightIcon';
+export * from './TrashIcon';

@@ -1,4 +1,5 @@
 import { MobileHeader } from '@/components/MobileHeader';
+import { ContinueButton } from '@/components/schedule/ContinueButton';
 import { TabButton } from '@/components/schedule/TabButton';
 import { ArrowBackIcon } from '@/icons';
 import { getByFilmIdSchedule } from '@/requests';
@@ -33,6 +34,7 @@ const TabNavigation = async ({ params, children }: TabNavigationProps) => {
         </ScrollArea>
       </nav>
       {children}
+      <ContinueButton />
     </>
   );
 };

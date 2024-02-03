@@ -1,5 +1,5 @@
 import { buttonVariants } from './ui';
-import { api } from '@/requests';
+import { api } from '@/api';
 import { Film } from '@/types';
 import { roboto } from '@/ui';
 import { cn } from '@/utils';
@@ -83,7 +83,14 @@ const FilmCard: React.FC<FilmCardProps> = ({ href, film, children, isMore }) => 
         </>
       )}
 
-      <Link className={cn(buttonVariants({ size: 'full' }), ' ')} href={href}>
+      <Link
+        className={cn(
+          !isMore && buttonVariants(),
+          !isMore && 'w-full',
+          isMore && buttonVariants({ fixed: true })
+        )}
+        href={href}
+      >
         {children}
       </Link>
     </div>

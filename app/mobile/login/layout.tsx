@@ -1,23 +1,22 @@
 import { MobileHeader } from '@/components/MobileHeader';
 import { GoToConfirmation } from '@/components/places/GoToConfirmation';
-import { ArrowBackIcon } from '@/icons';
+import { CrossIcon } from '@/icons';
 
 interface LayoutProps {
   children: React.ReactNode;
   params: { id: string; date: string; hall: string; time: string };
 }
 
-const Layout = async ({ children }: LayoutProps) => {
+const LoginLayout = async ({ children }: LayoutProps) => {
   return (
     <>
-      <MobileHeader title={'Выбор места'}>
-        <ArrowBackIcon />
+      <MobileHeader title={'Авторизация'}>
+        <CrossIcon />
       </MobileHeader>
 
       {children}
-      <GoToConfirmation />
     </>
   );
 };
 
-export default Layout;
+export default LoginLayout;

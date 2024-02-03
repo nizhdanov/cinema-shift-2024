@@ -1,4 +1,4 @@
-import { DesktopHeader } from '@/components';
+import { DesktopHeader } from '@/components/DesktopHeader';
 
 interface LayoutProps {
   children: React.ReactNode;
